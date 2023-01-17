@@ -5,7 +5,7 @@ const path = require("path");
 app.use(express.json()); // read JSON BODY
 app.use(express.urlencoded({ extended: true })); // read URL encoded body
 
-app.get("/chatbot", (req, res) => {
+app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "/index.html"));
 });
 
