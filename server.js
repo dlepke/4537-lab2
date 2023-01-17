@@ -5,6 +5,16 @@ const path = require("path");
 app.use(express.json()); // read JSON BODY
 app.use(express.urlencoded({ extended: true })); // read URL encoded body
 
+const cors = require("cors");
+app.use(
+  cors({
+    origin: [
+      "https://four537-lab2-backend.onrender.com",
+      "https://tranquil-cascaron-ff53b1.netlify.app",
+    ],
+  })
+);
+
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "/index.html"));
 });
